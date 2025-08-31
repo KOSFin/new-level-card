@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEW LEVEL - Сеть компьютерных клубов в Магнитогорске</title>
+    <title>Новый Уровень - Сеть компьютерных клубов в Магнитогорске</title>
+    <link rel="icon" type="image/jpeg" href="icons/logo.jpg">
     
     <style>
         /* CSS переменные для тем */
@@ -311,10 +312,10 @@
 
             // --- ИСХОДНЫЕ ДАННЫЕ ---
             const clubsData = [
-                { id: 'komsomolskaya', address: 'ул. Комсомольская, 19', phone: '+7 (958) 267-11-30', phoneLink: '+79582671130', coords: { lat: 53.3915, lon: 58.9745 }, gis2Id: '3659702978449744', images: { price: 'images/price-komsomolskaya.jpg', config: 'path/to/your/config-komsomolskaya.jpg' } },
-                { id: 'lenina', address: 'пр. Ленина, 154А', phone: '+7 (958) 267-11-07', phoneLink: '+79582671107', coords: { lat: 53.3768, lon: 59.0620 }, gis2Id: '70000001057596023', images: { price: 'images/price-lenina.jpg', config: 'path/to/your/config-lenina.jpg' } },
-                { id: '50let', address: 'ул. 50-летия Магнитки, 38а', phone: '+7 (958) 267-11-34', phoneLink: '+79582671134', coords: { lat: 53.3897, lon: 59.0345 }, gis2Id: '70000001040985001', images: { price: 'images/price-50let.jpg', config: 'path/to/your/config-50let.jpg' } },
-                { id: 'zeleniy', address: 'ул. Зелёный Лог, 26', phone: '+7 (958) 267-11-40', phoneLink: '+79582671140', coords: { lat: 53.3820, lon: 59.0435 }, gis2Id: '70000001095353030', images: { price: 'images/price-zeleniy.jpg', config: 'path/to/your/config-zeleniy.jpg' } }
+                { id: 'komsomolskaya', address: 'ул. Комсомольская, 19', phone: '+7 (958) 267-11-30', phoneLink: '+79582671130', coords: { lat: 53.3915, lon: 58.9745 }, gis2Id: '3659702978449744', images: { price: 'images/price-komsomolskaya.jpg', config: 'path/to/your/config-komsomolskaya.jpg' }, cover: "icons/logo.jpg" },
+                { id: 'lenina', address: 'пр. Ленина, 154А', phone: '+7 (958) 267-11-07', phoneLink: '+79582671107', coords: { lat: 53.366755, lon: 58.989505 }, gis2Id: '70000001057596023', images: { price: 'images/price-lenina.jpg', config: 'path/to/your/config-lenina.jpg' }, cover: "icons/logo.jpg" },
+                { id: '50let', address: 'ул. 50-летия Магнитки, 38а', phone: '+7 (958) 267-11-34', phoneLink: '+79582671134', coords: { lat: 53.3897, lon: 59.0345 }, gis2Id: '70000001040985001', images: { price: 'images/price-50let.jpg', config: 'path/to/your/config-50let.jpg' }, cover: "icons/logo.jpg" },
+                { id: 'zeleniy', address: 'ул. Зелёный Лог, 26', phone: '+7 (958) 267-11-40', phoneLink: '+79582671140', coords: { lat: 53.3820, lon: 59.0435 }, gis2Id: '70000001095353030', images: { price: 'images/price-zeleniy.jpg', config: 'path/to/your/config-zeleniy.jpg' }, cover: "icons/logo.jpg" },
             ];
 
             // --- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ---
@@ -375,7 +376,7 @@
                 card.className = 'club-card';
                 card.id = `club-${club.id}`;
                 card.innerHTML = `
-                    <div class="club-card-image"></div>
+                    <div class="club-card-image" style="background-image: url(${club.cover});"></div>
                     <div class="club-card-content">
                         <div>
                             <h3>${club.address}</h3>
@@ -390,13 +391,13 @@
                         <div class="club-card-footer">
                             <div class="club-buttons">
                                 <button class="btn btn-call" data-phone="${club.phoneLink}" data-address="${club.address}">📞 Позвонить</button>
-                                <button class="btn btn-map" data-lat="${club.coords.lat}" data-lon="${club.coords.lon}">🗺️ На карте</button>
+                                <!--<button class="btn btn-map" data-lat="${club.coords.lat}" data-lon="${club.coords.lon}">🗺️ На карте</button>-->
                                 <button class="btn btn-price" data-club-id="${club.id}" data-type="price">💲 Прайс</button>
-                                <button class="btn btn-config" data-club-id="${club.id}" data-type="config">🖥️ ПК</button>
+                                <button class="btn btn-config" data-club-id="${club.id}" data-type="config">🖥️ Концигурации</button>
                             </div>
                             <div class="club-nav-buttons">
                                 <a href="https://2gis.ru/magnitogorsk/firm/${club.gis2Id}" target="_blank" title="Открыть в 2GIS"><img src="icons/2gis.png" alt="2GIS"/></a>
-                                <a href="https://yandex.ru/maps/?pt=${club.coords.lon},${club.coords.lat}&z=18" target="_blank" title="Открыть в Яндекс.Картах"><img src="icons/yandex-map.png" alt="Yandex"/></a>
+                                <!--<a href="https://yandex.ru/maps/?pt=${club.coords.lon},${club.coords.lat}&z=18" target="_blank" title="Открыть в Яндекс.Картах"><img src="icons/yandex-map.png" alt="Yandex"/></a>-->
                             </div>
                         </div>
                     </div>
